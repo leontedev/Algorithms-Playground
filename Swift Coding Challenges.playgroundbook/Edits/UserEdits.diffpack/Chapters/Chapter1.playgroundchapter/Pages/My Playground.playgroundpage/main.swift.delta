@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>import Foundation
+
+func isPrime(input: Int) -&gt; Bool {
+    guard input &gt; 2 else { return true }
+    
+    let upperBound = Int(ceil(sqrt(Double(input))))
+    for i in 2...upperBound {
+        if input % i == 0 {
+            return false
+        }
+    }
+    return true
+}
+
+print(isPrime(input: 2) == true)
+print(isPrime(input: 16777259) == true)
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 343}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{0, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
