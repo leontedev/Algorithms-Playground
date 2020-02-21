@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*
+ Create a function that accepts any positive integer and returns the next highest and next lowest number that has the same number of ones in its binary representation. If either number is not possible, return nil for it.
+ 
+ Sample input and output
+ The number 12 is 1100 in binary, so it has two 1s. The next highest number with that many 1s is 17, which is 10001. The next lowest is 10, which is 1010.
+ The number 28 is 11100 in binary, so it has three 1s. The next highest number with that many 1s is 35, which is 100011. The next lowest is 26, which is 11010.”
+ 
+ Excerpt From: Paul Hudson. “Swift Coding Challenges”. Apple Books. */
+
+import Foundation
+
+func nextBinary(input: Int) -&gt; (Int,Int)? {
+    guard input &gt; 1 else { return nil }
+    var maxValue = input
+    var minValue = input
+    var count = 0
+    let onesCountTarget = Array(String(input, radix: 2)).filter { $0 == "1" }.count
+    
+    repeat {
+        maxValue += 1
+        count = Array(String(maxValue, radix: 2)).filter { $0 == "1" }.count
+    } while count != onesCountTarget
+    
+    count = 0
+    
+    repeat {
+        minValue -= 1
+        count = Array(String(minValue, radix: 2)).filter { $0 == "1" }.count
+    } while count != onesCountTarget &amp;&amp; minValue &gt; 0
+    
+    return (minValue, maxValue)
+}
+
+assert(nextBinary(input: 12)! == (10,17))
+assert(nextBinary(input: 28)! == (26,35))
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 1363}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*“Write a function that accepts a string as input, then returns how often each letter is repeated in a single run, taking case into account.
+ 
+ Tip: This approach is used in a simple lossless compression technique called run-length encoding.
+ 
+ Sample input and output
+ The string “aabbcc” should return “a2b2c2”.
+ The strings “aaabaaabaaa” should return “a3b1a3b1a3”
+ The string “aaAAaa” should return “a2A2a2”
+ 
+ Excerpt From: Paul Hudson. “Swift Coding Challenges”. Apple Books. */
+
+func encode(input: String) -&gt; String {
+    let chars = Array(input)
+    var previousChar: Character?
+    var encoded = ""
+    var count = 1
+    
+    for (index, letter) in chars.enumerated() {
+        if let previousChar = previousChar {
+            if letter != previousChar {
+                encoded.append(previousChar)
+                encoded.append("\(count)")
+                count = 1
+            } else {
+                count += 1
+            }
+        }
+        previousChar = letter
+    }
+    if let previousChar = previousChar {
+        encoded.append(previousChar)
+        encoded.append("\(count)")
+    }
+    return encoded
+}
+
+encode(input: "aabbcc") == "a2b2c2"
+encode(input: "aaabaaabaaa") == "a3b1a3b1a3"
+encode(input: "aaAAaa") == "a2A2a2"
+
+
+func encode_v2(input: String) -&gt; String {
+    var returnValue = ""
+    var letterCounter = 0
+    var letterArray = Array(input)
+    
+    for i in 0 ..&lt; letterArray.count {
+        letterCounter += 1
+        
+        if i + 1 == letterArray.count || letterArray[i] != letterArray[i + 1] {
+            returnValue += "\(letterArray[i])\(letterCounter)"
+            letterCounter = 0
+        }
+    }
+    
+    return returnValue
+}
+
+encode_v2(input: "aabbcc") == "a2b2c2"
+encode_v2(input: "aaabaaabaaa") == "a3b1a3b1a3"
+encode_v2(input: "aaAAaa") == "a2A2a2"
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 1801}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

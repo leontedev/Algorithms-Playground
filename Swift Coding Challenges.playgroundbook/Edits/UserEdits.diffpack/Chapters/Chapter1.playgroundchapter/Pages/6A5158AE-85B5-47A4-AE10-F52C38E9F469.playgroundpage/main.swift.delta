@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*“Write a function that accepts a string and returns true if it contains only numbers, i.e. the digits 0 through 9.
+ 
+ Sample input and output
+ The input “01010101” should return true.
+ The input “123456789” should return true.
+ The letter “9223372036854775808” should return true.
+ The letter “1.01” should return false; “.” is not a number.”
+ 
+ Excerpt From: Paul Hudson. “Swift Coding Challenges”. Apple Books. */
+
+func isInteger(input: String) -&gt; Bool {
+    if input.count &lt; 18 {
+        return Int(input) != nil
+    } else {
+        // split() is a String extension found in UserModule: String+split.swift
+        let fixedLengthStrings = input.split(byLength: 17)
+        for string in fixedLengthStrings {
+            if Int(string) == nil {
+                return false
+            }
+        }
+        return true
+    }
+    
+    return true
+}
+
+assert(isInteger(input: "01010101") == true)
+assert(isInteger(input: "123456789") == true)
+assert(isInteger(input: "9223372036854775808") == true)
+assert(isInteger(input: "1.01") == false)
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1042}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{0, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

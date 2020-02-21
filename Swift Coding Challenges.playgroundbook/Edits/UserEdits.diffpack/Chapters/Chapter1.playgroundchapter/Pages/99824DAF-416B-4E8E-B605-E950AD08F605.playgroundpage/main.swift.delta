@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*“Write a function that accepts a string as its input, and returns the same string just with duplicate letters removed.
+ 
+ Tip: If you can solve this challenge without a for-in loop, you can consider it “tricky” rather than “easy”.
+ 
+ Sample input and output
+ The string “wombat” should print “wombat”.
+ The string “hello” should print “helo”.
+ The string “Mississippi” should print “Misp”.”
+ 
+ Excerpt From: Paul Hudson. “Swift Coding Challenges”. Apple Books.
+ */
+
+func removeDuplicates(from input: String) -&gt; String {
+    return String(Set(input))
+}
+
+removeDuplicates(from: "hello")
+
+
+// However, the result does not retain order.
+// There is an Ordered Set implementation in the SPM library: https://github.com/apple/swift-package-manager/blob/5d05348c6fd072ae7989ed8b55ac2b017486acf4/Sources/Basic/OrderedSet.swift
+
+func removeDuplicates_v2(from input: String) -&gt; String {
+    return String(OrderedSet(Array(input)))
+}
+
+removeDuplicates_v2(from: "hello")
+
+// Or use NSORderedSet
+
+import Foundation
+
+func removeDuplicates_v3(from input: String) -&gt; String {
+    let array = input.map { String($0) } // array of Strings
+    let set = NSOrderedSet(array: array)
+    let letters = Array(set) as! Array&lt;String&gt;
+    return letters.joined()
+}
+
+removeDuplicates_v3(from: "hello")
+
+//let string = "hello"
+//let array = Array(string) // array of characters
+//let array2 = string.map { String($0) } // array of strings
+//print(array2)
+
+
+// For-loop solution
+
+func removeDuplicates_v4(from input: String) -&gt; String {
+    var new = [Character]()
+    
+    for letter in input {
+        if !new.contains(letter) {
+            new.append(letter)
+        }
+    }
+    
+    return String(new)
+}
+
+removeDuplicates_v4(from: "hello")
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1717}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{0, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

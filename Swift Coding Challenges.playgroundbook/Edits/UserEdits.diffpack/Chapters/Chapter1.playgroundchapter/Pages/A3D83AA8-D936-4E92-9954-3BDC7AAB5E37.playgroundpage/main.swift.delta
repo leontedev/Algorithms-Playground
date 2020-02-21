@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*“Given a string in English, return a tuple containing the number of vowels and consonants.
+ 
+ Tip: Vowels are the letters, A, E, I, O, and U; consonants are the letters B, C, D, F, G, H, J, K, L, M, N, P, Q, R, S, T, V, W, X, Y, Z.
+ 
+ Sample input and output
+ The input “Swift Coding Challenges” should return 6 vowels and 15 consonants.
+ The input “Mississippi” should return 4 vowels and 7 consonants.”
+ 
+ Excerpt From: Paul Hudson. “Swift Coding Challenges”. Apple Books. */
+
+import Foundation
+
+func vowelsConsonants(in input: String) -&gt; (Int, Int) {
+    let chars = Array(input.lowercased())
+    var vowels = 0
+    var consonants = 0
+    
+    for letter in chars {
+        if letter.isLetter {
+            if letter == "a" || letter == "e" || letter == "i" || letter == "o" || letter == "u" {
+                vowels += 1
+            } else {
+                consonants += 1
+            }
+        }
+    }
+    
+    return (vowels, consonants)
+}
+
+assert(vowelsConsonants(in: "Swift Coding Challenges") == (6, 15))
+assert(vowelsConsonants(in: "Mississippi") == (4, 7))
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 1071}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

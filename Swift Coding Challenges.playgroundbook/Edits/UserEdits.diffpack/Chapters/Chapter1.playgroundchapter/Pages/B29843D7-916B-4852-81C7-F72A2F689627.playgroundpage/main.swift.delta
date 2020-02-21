@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*“Write a function that accepts two strings, and returns true if one string is rotation of the other, taking letter case into account.
+ 
+ Tip: A string rotation is when you take a string, remove some letters from its end, then append them to the front. For example, “swift” rotated by two characters would be “ftswi”.
+ 
+ Sample input and output
+ The string “abcde” and “eabcd” should return true.
+ The string “abcde” and “cdeab” should return true.
+ The string “abcde” and “abced” should return false; this is not a string rotation.
+ The string “abc” and “a” should return false; this is not a string rotation.”
+ 
+ Excerpt From: Paul Hudson. “Swift Coding Challenges”. Apple Books. */
+
+func isRotated(s1: String, s2: String) -&gt; Bool {
+    guard let firstChar = s1.first else { return false }
+    guard let firstOccurance = s2.firstIndex(of: firstChar) else { return false }
+    let new = s2.suffix(from: firstOccurance) + s2.prefix(upTo: firstOccurance)
+    if s1 == new {
+        return true
+    }
+    
+    return false
+}
+
+
+assert(isRotated(s1: "abcde", s2: "eabcd") == true)
+assert(isRotated(s1: "abcde", s2: "cdeab") == true)
+assert(isRotated(s1: "abcde", s2: "abced") == false)
+assert(isRotated(s1: "abc", s2: "a") == false)
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 1230}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// Write your own version of the contains() method on String that ignores letter case, and without using the existing contains() method.
+
+extension String {
+    func fuzzyContains(_ input: String) -&gt; Bool {
+        if input.count &lt;= self.count {
+            let source = Array(self.lowercased())
+            let search = Array(input.lowercased())
+            
+            var isFound: Bool
+            
+            for i in 0...source.count-search.count {
+                isFound = true
+                
+                for j in 0...search.count - 1 {
+                    if search[j] != source[i+j] {
+                        isFound = false
+                        break
+                    }
+                }
+                if isFound {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+}
+
+import Foundation
+// range(of:) solution (requires Foundation)
+extension String {
+    func fuzzyContainsRange(_ input: String) -&gt; Bool {
+        return self.uppercased().range(of: input.uppercased()) != nil
+    }
+}
+
+extension String {
+    func fuzzyContainsRangeB(_ string: String) -&gt; Bool {
+        return range(of: string, options: .caseInsensitive) != nil
+    }
+}
+
+assert("Hello, world".fuzzyContains("Hello") == true)
+assert("Hello, world".fuzzyContains("WORLD") == true)
+assert("Hello, world".fuzzyContains("Goodbye") == false)
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1378}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

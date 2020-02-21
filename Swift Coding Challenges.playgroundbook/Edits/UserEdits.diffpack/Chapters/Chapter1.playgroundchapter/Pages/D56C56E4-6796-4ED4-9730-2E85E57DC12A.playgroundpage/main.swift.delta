@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*“Create a function that accepts positive two integers, and raises the first to the power of the second.
+ 
+ Sample input and output
+ The inputs 4 and 3 should return 64, i.e. 4 multiplied by itself 3 times.
+ The inputs 2 and 8 should return 256, i.e. 2 multiplied by itself 8 times.
+ ”
+ 
+ Excerpt From: Paul Hudson. “Swift Coding Challenges”. Apple Books. */
+
+import Foundation
+
+
+func power(of: Int, to: Int) -&gt; Int {
+    return Int(pow(Double(of), Double(to)))
+}
+
+power(of: 4, to: 3) == 64
+power(of: 2, to: 8) == 256
+
+// Using a loop
+
+func power_v2(of: Int, to: Int) -&gt; Int {
+    var result: Int = 1
+    
+    for _ in 1...to {
+        result *= of
+    }
+    
+    if to == 0 {  return 0 }
+    else { return result }
+}
+
+power_v2(of: 4, to: 3) == 64
+power_v2(of: 2, to: 8) == 256
+
+// Recursive
+
+func power_v3(of number: Int, to power: Int) -&gt; Int {
+    switch power {
+    case 0:
+        return 1
+    case 1:
+        return number
+    default:
+        return number * power_v3(of: number, to: power-1)
+    }
+    
+}
+
+power_v3(of: 4, to: 3) == 64
+power_v3(of: 2, to: 8) == 256
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 1074}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

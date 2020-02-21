@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*“Create a function that accepts an unsigned 8-bit integer and returns its binary reverse, padded so that it holds precisely eight binary digits.
+ 
+ Sample input and output
+ The number 32 is 100000 in binary, and padded to eight binary digits that’s 00100000. Reversing that binary sequence gives 00000100, which is 4. So, when given the input 32 your function should return 4.
+ The number 41 is 101001 in binary, and padded to eight binary digits that 00101001. Reversing that binary sequence gives 10010100, which is 148. So, when given the input 41 your function should return 148.
+ It should go without saying that your function should be symmetrical: when fed 4 it should return 32, and when fed 148 it should return 41.”
+ 
+ Excerpt From: Paul Hudson. “Swift Coding Challenges”. Apple Books.  */
+
+func reversedBinary(input: UInt8) -&gt; Int {
+    // .pad &amp; .pad_v2 are String extensions found in UserModule: String+pad.swift
+    var binaryValue = String(String(input, radix: 2).pad(with: "0", toLength: 8).reversed())
+    guard let result = Int(binaryValue, radix: 2) else { return 0 }
+    
+    return result
+}
+
+assert(reversedBinary(input: 32) == 4)
+assert(reversedBinary(input: 41) == 148)
+assert(reversedBinary(input: 4) == 32)
+assert(reversedBinary(input: 148) == 41)
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1275}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*
+ “Write a function that returns a string with each of its words reversed but in the original order, without using a loop.
+ 
+ Sample input and output
+ The string “Swift Coding Challenges” should return “tfiwS gnidoC segnellahC”.
+ The string “The quick brown fox” should return “ehT kciuq nworb xof”.”
+ 
+ Excerpt From: Paul Hudson. “Swift Coding Challenges”. Apple Books.
+ */
+
+import Foundation
+
+func reverse(string: String) -&gt; String {
+    let strings = string.components(separatedBy: " ")
+    var reversed = ""
+    
+    for (index, word) in strings.enumerated() {
+        if index != 0 {
+            reversed += " "
+        }
+        reversed += word.reversed()
+    }
+    
+    return reversed
+    
+}
+
+reverse(string: "Swift Coding Challenges") == "tfiwS gnidoC segnellahC"
+reverse(string: "The quick brown fox") == "ehT kciuq nworb xof"
+
+// without using a for loop
+func reverse_v2(string: String) -&gt; String {
+    let strings = string.components(separatedBy: " ")
+    var reversedStrings = strings.map { String($0.reversed()) }
+    return reversedStrings.joined(separator: " ")
+    
+}
+
+reverse_v2(string: "Swift Coding Challenges") == "tfiwS gnidoC segnellahC"
+reverse_v2(string: "The quick brown fox") == "ehT kciuq nworb xof"
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 1231}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

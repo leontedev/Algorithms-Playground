@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*“Write a function that accepts a String as its only parameter, and returns true if the string reads the same when reversed, ignoring case.
+ 
+ Sample input and output
+ The string “rotator” should return true.
+ The string “Rats live on no evil star” should return true.
+ The string “Never odd or even” should return false; even though the letters are the same in reverse the spaces are in different places.
+ The string “Hello, world” should return false because it reads “dlrow ,olleH” backwards.”
+ 
+ Excerpt From: Paul Hudson. “Swift Coding Challenges”. Apple Books. */
+
+func challenge2(input: String) -&gt; Bool {
+    var charArray = Array(input.lowercased())
+    
+    for i in 0...input.count / 2 + 1 {
+        if charArray[i] != charArray[charArray.count - 1 - i] {
+            return false
+        }
+    }
+    
+    return true
+}
+
+func challenge2b(input: String) -&gt; Bool {
+    let lowercased = input.lowercased()
+    return String(lowercased.reversed()) == lowercased
+}
+
+assert(challenge2(input: "rotator") == true)
+assert(challenge2(input: "Rats live on no evil star") == true)
+assert(challenge2(input: "Never odd or even") == false)
+assert(challenge2(input: "Hello, world!") == false)
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1188}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{0, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

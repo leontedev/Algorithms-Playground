@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*“Swap two positive variable integers, a and b, without using a temporary variable.
+ 
+ Sample input and output
+ Before running your code a should be 1 and b should be 2; afterwards, b should be 1 and a should be 2.”
+ 
+ Excerpt From: Paul Hudson. “Swift Coding Challenges”. Apple Books. */
+
+
+var a = 1
+var b = 2
+
+func swapTwo() {
+    swap(&amp;a, &amp;b)
+}
+
+swapTwo()
+a == 2
+b == 1
+
+// Using Tuples
+
+func swapTwo_tuples() {
+    (a,b) = (b,a)
+}
+
+swapTwo_tuples()
+a == 1
+b == 2
+
+// Using Math
+
+func swapTwo_math() {
+    a = a + b
+    b = a - b
+    a = a - b
+}
+
+swapTwo_math()
+a == 2
+b == 1
+
+
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 582}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*“Write a function that returns true if it is given a string that is an English pangram, ignoring letter case.
+ 
+ Tip: A pangram is a string that contains every letter of the alphabet at least once.
+ 
+ Sample input and output
+ The string “The quick brown fox jumps over the lazy dog” should return true.
+ The string “The quick brown fox jumped over the lazy dog” should return false, because it’s missing the S.
+ ”
+ 
+ Excerpt From: Paul Hudson. “Swift Coding Challenges”. Apple Books. */
+import Foundation
+
+func isPangram(input: String) -&gt; Bool {
+    for letter in "abcdefghijklmnopqrstuvwxyz" {
+        guard let pos = input.lowercased().firstIndex(of: letter) else { return false }
+    }
+    
+    return true
+}
+
+
+assert(isPangram(input: "The quick brown fox jumps over the lazy dog") == true)
+assert(isPangram(input: "The quick brown fox jumps over the lazy Dog") == true)
+assert(isPangram(input: "The quick brown fox jumped over the lazy dog") == false)
+
+func isPangram_v2(input: String) -&gt; Bool {
+    let set = Set(input.lowercased())
+    let letters = set.filter { $0 &gt;= "a" &amp;&amp; $0 &lt;= "z" }
+    return letters.count == 26
+}
+
+assert(isPangram_v2(input: "The quick brown fox jumps over the lazy dog") == true)
+assert(isPangram_v2(input: "The quick brown fox jumps over the lazy Dog") == true)
+assert(isPangram_v2(input: "The quick brown fox jumped over the lazy dog") == false)
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 1381}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

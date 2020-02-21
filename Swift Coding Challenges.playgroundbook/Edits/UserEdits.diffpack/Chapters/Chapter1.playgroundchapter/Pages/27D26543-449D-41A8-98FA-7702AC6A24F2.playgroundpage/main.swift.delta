@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*“Write a function that returns a string with any consecutive spaces replaced with a single space.
+ 
+ Sample input and output
+ I’ve marked spaces using “[space]” below for visual purposes:
+ 
+ The string “a[space][space][space]b[space][space][space]c” should return “a[space]b[space]c”.
+ The string “[space][space][space][space]a” should return “[space]a”.
+ The string “abc” should return “abc”.”
+ 
+ Excerpt From: Paul Hudson. “Swift Coding Challenges”. Apple Books. */
+
+func condenseWhitespace(from input: String) -&gt; String {
+    var chars = Array(input)
+    let count = chars.count
+    
+    for i in 0...count-2 {
+        let index = count - i - 1
+        let letter = chars[index]
+        let nextLetter = chars[index-1]
+        
+        if letter == " " &amp;&amp; nextLetter == " " {
+            chars.remove(at: index)
+            //print(index)
+        }
+    }
+    
+    return String(chars)
+}
+
+assert(condenseWhitespace(from: "a   b   c") == "a b c")
+assert(condenseWhitespace(from: "c  c       c") == "c c c")
+assert(condenseWhitespace(from: "  c") == " c")
+
+import Foundation
+
+func condenseWhitespace_v2(from input: String) -&gt; String {
+    return input.replacingOccurrences(of: " +", with: " ", options: .regularExpression)
+}
+
+assert(condenseWhitespace_v2(from: "a   b      c") == "a b c")
+assert(condenseWhitespace_v2(from: "  c") == " c")
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 1342}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

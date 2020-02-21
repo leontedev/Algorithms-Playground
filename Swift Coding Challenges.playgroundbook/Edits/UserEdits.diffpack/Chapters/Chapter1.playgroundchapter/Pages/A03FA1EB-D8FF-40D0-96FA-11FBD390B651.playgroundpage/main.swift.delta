@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*“Write a function that accepts a String as its only parameter, and returns true if the string has only unique letters, taking letter case into account.
+ 
+ Sample input and output
+ The string “No duplicates” should return true.
+ The string “abcdefghijklmnopqrstuvwxyz” should return true.
+ The string “AaBbCc” should return true because the challenge is case-sensitive.
+ The string “Hello, world” should return false because of the double Ls and double Os.”
+ 
+ Excerpt From: Paul Hudson. “Swift Coding Challenges”. Apple Books. */
+
+func challenge1a(input: String) -&gt; Bool {
+    var substring = Array(input)
+
+    for char in input {
+        substring.remove(at: 0)
+        for elem in substring {
+            if char == elem {
+                return false
+            }
+        }
+    }
+
+    return true
+}
+
+assert(challenge1a(input: "No duplicates") == true, "Challenge 1 failed")
+assert(challenge1a(input: "abcdefghijklmnopqrstuvwxyz") == true, "Challenge 1 failed")
+assert(challenge1a(input: "AaBbCc") == true, "Challenge 1 failed")
+assert(challenge1a(input: "Hello, world") == false, "Challenge 1 failed")
+
+func challenge1b(input: String) -&gt; Bool {
+    return Set(input).count == input.count
+}
+
+assert(challenge1b(input: "No duplicates") == true, "Challenge 1 failed")
+assert(challenge1b(input: "abcdefghijklmnopqrstuvwxyz") == true, "Challenge 1 failed")
+assert(challenge1b(input: "AaBbCc") == true, "Challenge 1 failed")
+assert(challenge1b(input: "Hello, world") == false, "Challenge 1 failed")
+
+let str = "aaaaABBbbc"
+let mySet = Set(str)
+let uniqueLetterCount = Set(str.lowercased()).count
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1596}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

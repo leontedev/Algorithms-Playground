@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*Write a function that accepts a string, and returns how many times a specific character appears, taking case into account.
+ Tip: If you can solve this without using a for-in loop, you can consider it a Tricky challenge. */
+
+
+func count(char: Character, in input: String) -&gt; Int {
+    var counter: Int = 0
+    for letter in input {
+        if char == letter {
+            counter += 1
+        }
+    }
+    
+    return counter
+}
+
+assert(count(char: "l", in: "Hello World!") == 3)
+
+
+func countWithoutFor(char: Character, in input: String) -&gt; Int { 
+    input.filter { $0 == char }.count
+}
+
+assert(countWithoutFor(char: "o", in: "Hello World!") == 2)
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 648}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{0, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
