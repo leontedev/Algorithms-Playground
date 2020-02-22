@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*“Challenge 26: Subtract without subtract
+ 
+ Create a function that subtracts one positive integer from another, without using -.
+ 
+ Sample input and output
+ The code challenge26(subtract: 5, from: 9) should return 4.
+ The code challenge26(subtract: 10, from: 30) should return 20.
+ ”
+ 
+ Excerpt From: Paul Hudson. “Swift Coding Challenges”. Apple Books. */
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 359}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

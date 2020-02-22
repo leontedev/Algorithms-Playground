@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*“Write a function that returns the square root of a positive integer, rounded down to the nearest integer, without using sqrt().
+ 
+ Sample input and output
+ The number 9 should return 3.
+ The number 16777216 should return 4096.
+ The number 16 should return 4.
+ The number 15 should return 3.
+ ”
+ 
+ Excerpt From: Paul Hudson. “Swift Coding Challenges”. Apple Books. */
+
+func intSqrt(_ input: Int) -&gt; Int {
+    var result = 0
+    
+    
+    return result
+}
+
+assert(intSqrt(9) == 3)
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 481}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

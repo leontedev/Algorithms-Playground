@@ -1,8 +1,8 @@
-# SwiftUI Project
+# Algorithms & Data Structures
 
-**Project description.**
+**Various algorithms exercises & challenges.**
 
-![](gif.gif)
+## Sources
 
-#### Technologies used:
-- SwiftUI
+#### "Swift Coding Challenges" "by Paul Hudson
+Swift Coding Challenges.playgroundbook

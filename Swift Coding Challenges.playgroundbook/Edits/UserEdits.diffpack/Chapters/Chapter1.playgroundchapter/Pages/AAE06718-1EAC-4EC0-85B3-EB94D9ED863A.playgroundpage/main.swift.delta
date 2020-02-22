@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*“Challenge 27: Print last lines
+ Difficulty: Easy
+ 
+ Write a function that accepts a filename on disk, then prints its last N lines in reverse order, all on a single line separated by commas.
+ 
+ Sample input and output
+ Here is your test input file:
+ 
+ Antony And Cleopatra
+ Coriolanus
+ Cymbeline
+ Hamlet
+ Julius Caesar
+ King Lear
+ Macbeth
+ Othello
+ Twelfth Night
+ If asked to print the last 3 lines, your code should output “Twelfth Night, Othello, Macbeth”.
+ If asked to print the last 100 lines, your code should output “Twelfth Night, Othello, Macbeth, King Lear, Julius Caesar, Hamlet, Cymbeline, Coriolanus, Antony and Cleopatra”.
+ If asked to print the last 0 lines, your could should print nothing.
+ 
+ Excerpt From: Paul Hudson. “Swift Coding Challenges”. Apple Books. */
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 782}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
